@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main  # Exécuter l'action uniquement sur les modifications de la branche "main"
+permissions:
+  contents: read
+  packages: write
+      
 
 jobs:
   build-and-publish:
