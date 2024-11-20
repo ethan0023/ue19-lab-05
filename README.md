@@ -6,7 +6,7 @@ Cette application interroge une API publique (JokeAPI) pour récupérer des blag
 
 - **Python 3.8** ou plus récent
 - **pip** pour gérer les dépendances
-- **Docker** (facultatif pour exécuter dans un conteneur)
+- **Docker** (facultatifs pour exécuter dans un conteneur)
 
 ## Installation
 

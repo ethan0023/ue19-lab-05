@@ -8,4 +8,4 @@ if r.status_code == 200:
         print("Blague :", fichier_json["setup"])
         print("Réponse :", fichier_json["delivery"])
 else:
-    print("Erreur lors de la requête à l'API. code de statut :", r.status_code)
+    print("Erreur lors de la requête à l'API. code de statut. :", r.status_code)

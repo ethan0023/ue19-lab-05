@@ -1,4 +1,4 @@
-# Utiliser une image officielle de Python
+# Utiliser une image officielle de Python.
 FROM python:3.9-slim
 
 # Définir l'auteur
