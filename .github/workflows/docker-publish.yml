@@ -29,7 +29,17 @@ jobs:
       # Étape 3 : Construire l'image Docker
       - name: Build Docker image
         run: |
-          docker build -t ghcr.io/${{ github.repository }}/joke-app:latest .
+          docker build -t ghcr.io/${{ github.repository }}/joke-app:latest . 
+
+      - name: Scan Docker image with Trivy
+        uses: aquasecurity/trivy-action@v0.5.0
+        with:
+          image: ghcr.io/${{ github.repository }}/joke-app:latest
+          format: 'table'  # Résultat du scan sous forme de tableau dans les logs
+          exit-code: 1  # Le workflow échoue si des vulnérabilités HIGH ou CRITICAL sont détectées
+
+
+
 
       # Étape 4 : Pousser l'image vers GitHub Packages
       - name: Push Docker image
