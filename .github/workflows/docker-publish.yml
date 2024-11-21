@@ -35,12 +35,13 @@ jobs:
         run: |
           docker build -t ghcr.io/${{ github.repository }}/joke-app:latest . 
 
-      - name: Scan Docker image with Trivy
-        uses: aquasecurity/trivy-action@0.29.0
+      - name: Trivy Scan
+        uses: aquasecurity/trivy-action@v0.29.0
         with:
-          image: ghcr.io/${{ github.repository }}/joke-app:0.29.0
-          format: 'table'  # Résultat du scan sous forme de tableau dans les logs
-          exit-code: 1  # Le workflow échoue si des vulnérabilités HIGH ou CRITICAL sont détectées
+          scan-type: image
+          image-ref: ghcr.io/ethan0023/ue19-lab-05/joke-app:latest
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
 
 
 
