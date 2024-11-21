@@ -14,3 +14,7 @@ Cette application interroge une API publique (JokeAPI) pour récupérer des blag
    ```bash
    git clone https://github.com/<ton_nom_utilisateur>/ue19-lab-05.git
    cd ue19-lab-05
+
+## Execution
+- docker build -t joke-app .
+- docker run --rm joke-app
