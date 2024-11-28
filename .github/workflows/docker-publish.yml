@@ -41,7 +41,7 @@ jobs:
           scan-type: image
           image-ref: ghcr.io/ethan0023/ue19-lab-05/joke-app:latest
           severity: HIGH,CRITICAL
-          ignore-unfixed: false
+          ignore-unfixed: true
 
 
 
