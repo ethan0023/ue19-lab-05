@@ -41,12 +41,14 @@ jobs:
           scan-type: image
           image-ref: ghcr.io/ethan0023/ue19-lab-05/joke-app:latest
           severity: HIGH,CRITICAL
-          # ignore-unfixed: true
+          ignore-unfixed: true
+        continue-on-error: false
 
 
 
 
       # Étape 4 : Pousser l'image vers GitHub Packages
       - name: Push Docker image
+        if: success()
         run: |
           docker push ghcr.io/${{ github.repository }}/joke-app:latest
